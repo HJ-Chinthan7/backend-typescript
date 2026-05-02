@@ -1,6 +1,7 @@
 import winston from 'winston';
 import DailyRotateFile from 'winston-daily-rotate-file';
 import { asyncLocalStorage } from '../helper/request.helper';
+
 export const logger = winston.createLogger({
     format: winston.format.combine(
         winston.format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
@@ -11,7 +12,7 @@ export const logger = winston.createLogger({
                 timestamp,
                 message,
                 data,
-                requestId: asyncLocalStorage.getStore()?.requestId
+                requestId: asyncLocalStorage.getStore()?.requestId||"This fucntion is not in asyncLocalStorage context",
             }
             return JSON.stringify(output)
         })

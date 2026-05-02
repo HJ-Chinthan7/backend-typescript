@@ -24,3 +24,14 @@ export class BadRequestError implements  appError{
         this.message=message
     }
 };
+
+export class NotFoundError implements appError{
+    statusCode: number;
+    name: string;
+    message: string;
+    constructor(message:string){
+        this.statusCode=404,
+        this.name="Not Found",
+        this.message=message
+    }
+}

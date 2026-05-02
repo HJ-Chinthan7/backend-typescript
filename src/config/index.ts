@@ -10,10 +10,10 @@ type ServerConfig={
 }
 
 type DataBaseSchema={
-    username:String,
-    password:String,
-    database:String,
-    host:String,
+    username:string,
+    password:string,
+    database:string,
+    host:string,
 }
 
 
